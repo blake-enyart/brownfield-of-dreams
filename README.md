@@ -34,26 +34,26 @@ brew install yarn
 yarn add stimulus
 ```
 
-Next, you'll need to setup a YouTube API key:
+Next, you'll need to generate and integrate a YouTube API key into the app as follows:
 
  * Visit [here](https://developers.google.com/youtube/v3/getting-started) and follow the steps to create a project.
  
- * Return to [here](https://developers.google.com/youtube/v3/getting-started), click on `obtain authorization credentials`, then `Credentials page`, and create credentials for the YouTube API just generated. 
+ * Return to the [YouTube API key - Getting Started](https://developers.google.com/youtube/v3/getting-started), click on `obtain authorization credentials`, then `Credentials page`, and create credentials for the YouTube API just generated. 
  
-  **Note**: Create a new project, enable `YouTube Data API v3` API, and generate an API key NOT an OAuth 2.0 credential
+  **Note**: Make sure to enable the `YouTube Data API v3` API for the project and generate an API key NOT an OAuth 2.0 credential
 
  * Use the `figaro` gem to generate an `application.yml` as follows:
  ```
  bundle exec figaro install
  ```
- * Open the `config/application.yml` that was generated in your preferred editor
+ * Open the `config/application.yml` that was just generated in an editor
  
  * Copy the key generated earlier and paste that key in the `application.yml` in the following format:
  ```
  YOUTUBE_API_KEY: '<YouTube generated API key>'
  ```
 
-Then, setup the database
+After you setup the API key, setup the database
 ```
 rake db:{drop,create,migrate,seed}
 ```
