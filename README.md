@@ -41,18 +41,18 @@ yarn add stimulus
 ```
 
 Next, you'll need to setup an API key:
-    * Visit [here](https://developers.google.com/youtube/v3/getting-started) and follow the steps to generate an API key for YouTube
-    *Note*: Generate an API key NOT an OAuth 2.0 credential
+ * Visit [here](https://developers.google.com/youtube/v3/getting-started) and follow the steps to generate an API key for YouTube
+ *Note*: Generate an API key NOT an OAuth 2.0 credential
 
-    * Use the `figaro` gem to generate an `application.yml` as follows:
-    ```
-    bundle exec figaro install
-    ```
+ * Use the `figaro` gem to generate an `application.yml` as follows:
+ ```
+ bundle exec figaro install
+ ```
 
-    * Copy the key generated earlier and paste that key in the `application.yml` in the following format:
-    ```
-    YOUTUBE_API_KEY: '<YouTune generated API key>'
-    ```
+ * Copy the key generated earlier and paste that key in the `application.yml` in the following format:
+ ```
+ YOUTUBE_API_KEY: '<YouTune generated API key>'
+ ```
 
 Set up the database
 ```
