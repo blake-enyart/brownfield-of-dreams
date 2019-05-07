@@ -40,7 +40,7 @@ brew install yarn
 yarn add stimulus
 ```
 
-Next, you'll need to setup an API key:
+Next, you'll need to setup a YouTube API key:
  * Visit [here](https://developers.google.com/youtube/v3/getting-started) and follow the steps to generate an API key for YouTube
  *Note*: Generate an API key NOT an OAuth 2.0 credential
 
