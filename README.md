@@ -48,7 +48,7 @@ Next, you'll need to setup a YouTube API key:
  
  * Copy the key generated earlier and paste that key in the `application.yml` in the following format:
  ```
- YOUTUBE_API_KEY: '<YouTune generated API key>'
+ YOUTUBE_API_KEY: '<YouTube generated API key>'
  ```
 
 Then, setup the database
