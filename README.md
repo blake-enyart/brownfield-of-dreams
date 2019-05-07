@@ -36,7 +36,9 @@ yarn add stimulus
 
 Next, you'll need to setup a YouTube API key:
 
- * Visit [here](https://developers.google.com/youtube/v3/getting-started), click on `obtain authorization credentials`, then `Credentials page`, and create credentials for the YouTube API just generated. 
+ * Visit [here](https://developers.google.com/youtube/v3/getting-started) and follow the steps to create a project.
+ 
+ * Return to [here](https://developers.google.com/youtube/v3/getting-started), click on `obtain authorization credentials`, then `Credentials page`, and create credentials for the YouTube API just generated. 
  
   **Note**: Create a new project, enable `YouTube Data API v3` API, and generate an API key NOT an OAuth 2.0 credential
 
