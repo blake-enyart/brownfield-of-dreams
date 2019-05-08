@@ -1,6 +1,6 @@
 # Brownfield Of Dreams
 
-This is the final project built out from a brownfield project used at Turing for Backend Mod 3.
+This is the final project which was built starting from a brownfield project used at Turing for Backend Mod 3.
 
 The original brownfield code base can be referred to in the Github repo [here](https://github.com/turingschool-examples/brownfield-of-dreams).
 
