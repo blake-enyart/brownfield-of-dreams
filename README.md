@@ -2,7 +2,7 @@
 
 This is the final project built out from a brownfield project used at Turing for Backend Mod 3.
 
-The original code base and be referred to in the Github repo [here](https://github.com/turingschool-examples/brownfield-of-dreams).
+The original brownfield code base can be referred to in the Github repo [here](https://github.com/turingschool-examples/brownfield-of-dreams).
 
 Project Spec and Evaluation Rubric: https://github.com/turingschool-examples/brownfield-of-dreams
 
