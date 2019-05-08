@@ -52,6 +52,8 @@ Next, you'll need to generate and integrate a YouTube API key into the app as fo
  
  * Copy the key generated earlier and paste that key in the `application.yml` in the following format:
  ```
+ #config/application.yml
+ 
  YOUTUBE_API_KEY: '<YouTube generated API key>'
  ```
 
