@@ -5,7 +5,7 @@ class SearchResultsFacade
   end
 
   def repositories
-    raw_repo_data = get_json.map do |raw_repo|
+    raw_repo_data = get_json('repos').map do |raw_repo|
       Repo.new(raw_repo)
     end
     select_repos(raw_repo_data, 5)
@@ -18,7 +18,7 @@ class SearchResultsFacade
   private
 
     def conn
-      url_path = "https://api.github.com/user/repos"
+      url_path = "https://api.github.com/user/"
       Faraday.new(url: url_path) do |faraday|
           faraday.params["access_token"] = @token
           faraday.adapter Faraday.default_adapter

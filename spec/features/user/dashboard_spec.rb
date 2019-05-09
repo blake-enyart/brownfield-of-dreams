@@ -17,9 +17,16 @@ context 'As a registered user' do
         expect(page).to have_css('.github-repo', count: 5)
       end
     end
-  end
-# When I visit /dashboard
-# Then I should see a section for "Github"
-# And under that section I should see a list of 5 repositories with the name of each Repo linking to the repo on Github
 
+    it 'does not show Github section if user is missing token' do
+      user = create(:user)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      allow_any_instance_of(ApplicationController).to receive(:current_token).and_return(nil)
+
+      visit dashboard_path
+
+      expect(page).to_not have_css('.github-repos', text: 'Github')
+    end
+  end
 end
