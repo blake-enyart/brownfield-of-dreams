@@ -31,9 +31,6 @@ end
 
 SimpleCov.start "rails"
 
-require 'codecov'
-SimpleCov.formatter = SimpleCov::Formatter::Codecov
-
 Shoulda::Matchers.configure do |config|
     config.integrate do |with|
     with.test_framework :rspec
