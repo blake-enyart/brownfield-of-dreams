@@ -21,8 +21,8 @@ class SearchResultsFacade
     def conn
       url_path = 'https://api.github.com/user/'
       Faraday.new(url: url_path) do |faraday|
-          faraday.params['access_token'] = @token
-          faraday.adapter Faraday.default_adapter
+        faraday.params['access_token'] = @token
+        faraday.adapter Faraday.default_adapter
       end
     end
 
