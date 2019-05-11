@@ -25,6 +25,6 @@ class ApplicationController < ActionController::Base
 
   def current_token
     github_access = current_user.github_credential
-    github_access[:token]
+    github_access[:token] if github_access
   end
 end
