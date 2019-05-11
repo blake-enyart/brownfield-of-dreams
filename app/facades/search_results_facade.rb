@@ -13,20 +13,20 @@ class SearchResultsFacade
   end
 
   def select_repos(raw_repo_data, amount)
-    raw_repo_data[0..(amount-1)]
+    raw_repo_data[0..(amount - 1)]
   end
 
   private
 
     def conn
-      url_path = "https://api.github.com/user/"
+      url_path = 'https://api.github.com/user/'
       Faraday.new(url: url_path) do |faraday|
-          faraday.params["access_token"] = @token
+          faraday.params['access_token'] = @token
           faraday.adapter Faraday.default_adapter
       end
     end
 
-    def get_json(url=nil)
+    def get_json(url = nil)
       response = conn.get(url)
       JSON.parse(response.body, symbolize_names: true)
     end
