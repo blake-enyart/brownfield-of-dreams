@@ -6,14 +6,9 @@ class SearchResultsFacade
   end
 
   def repositories
-    raw_repo_data = get_json('repos').map do |raw_repo|
+    raw_repo_data = get_json('repos').take(5).map do |raw_repo|
       Repo.new(raw_repo)
     end
-    select_repos(raw_repo_data, 5)
-  end
-
-  def select_repos(raw_repo_data, amount)
-    raw_repo_data[0..(amount - 1)]
   end
 
   private
