@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :find_bookmark
   helper_method :list_tags
   helper_method :tutorial_name
+  helper_method :current_token
 
   add_flash_types :success
 
@@ -20,5 +21,10 @@ class ApplicationController < ActionController::Base
 
   def four_oh_four
     raise ActionController::RoutingError.new('Not Found')
+  end
+
+  def current_token
+    github_access = current_user.github_credential
+    github_access[:token] if github_access
   end
 end
