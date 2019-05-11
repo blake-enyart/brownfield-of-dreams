@@ -1,7 +1,6 @@
 class SearchResultsFacade
   # Search Github API for information on users
   # frozen_string_literal: true
-
   def initialize(token)
     @token = token
   end
