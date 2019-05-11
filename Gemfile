@@ -22,11 +22,11 @@ gem 'figaro'
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'active_model_serializers'
-gem 'omniauth-google-oauth2'
 gem 'will_paginate'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census"
 gem 'rubocop-performance'
+gem 'omniauth-github', github: 'intridea/omniauth-github'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
