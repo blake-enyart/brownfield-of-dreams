@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     render locals: {
-      facade: SearchResultsFacade.new(current_token())
+      facade: SearchResultsFacade.new(current_token)
     }
   end
 
