@@ -6,8 +6,10 @@ context 'As a registered user' do
       user = create(:user)
       token = ENV['GITHUB_API_TOKEN']
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      allow_any_instance_of(ApplicationController).to receive(:current_token).and_return(token)
+      allow_any_instance_of(ApplicationController).to \
+        receive(:current_user).and_return(user)
+      allow_any_instance_of(ApplicationController).to \
+        receive(:current_token).and_return(token)
 
       visit dashboard_path
 
@@ -21,8 +23,10 @@ context 'As a registered user' do
     it 'does not show Github section if user is missing token' do
       user = create(:user)
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      allow_any_instance_of(ApplicationController).to receive(:current_token).and_return(nil)
+      allow_any_instance_of(ApplicationController).to \
+        receive(:current_user).and_return(user)
+      allow_any_instance_of(ApplicationController).to \
+        receive(:current_token).and_return(nil)
 
       visit dashboard_path
 
