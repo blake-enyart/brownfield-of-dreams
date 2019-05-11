@@ -1,4 +1,6 @@
 class GithubCredentialsController < ApplicationController
+  # frozen_string_literal: true
+  
   def create
     user_info = request.env['omniauth.auth']
     token = user_info['credentials']['token']
