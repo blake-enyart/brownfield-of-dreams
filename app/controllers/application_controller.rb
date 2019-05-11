@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
   end
 
-  def current_token # Need to fill out this method later
+  def current_token
+    current_user.github_credential.token
   end
 end
