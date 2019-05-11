@@ -1,4 +1,6 @@
 class Repo
+  # frozen_string_literal: true
+  # Builds repo objects from JSON data feed in
   attr_reader :name, :html_url
   def initialize(data)
     @name = data[:name]
