@@ -69,7 +69,7 @@ context 'As a registered user that connects Github' do
 
         expect(page).to have_css('.github', text: 'Github')
 
-        within('.github-following') do
+        within('.github-followings') do
           expect(page).to have_css('a.github-following')
         end
       end
