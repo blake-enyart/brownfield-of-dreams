@@ -14,11 +14,21 @@
   </section>
 
   <% if current_token %>
-  <section class='github-repos'>
+  <section class='github'>
     <h3>Github</h3>
-    <% facade.repositories.each do |repo| %>
-    <%= link_to repo.name, repo.html_url, class: 'github-repo' %>
-    <% end %>
+    <section class='github-repos'>
+      <h4>Repos</h4>
+      <% facade.repositories.each do |repo| %>
+      <%= link_to repo.name, repo.html_url, class: 'github-repo' %>
+      <% end %>
+    </section>
+
+    <section class='github-followers'>
+      <h4>Followers</h4>
+      <% facade.followers.each do |user| %>
+      <%= link_to user.handle, user.github_url, class: 'github-follower' %>
+      <% end %>
+    </section>
   </section>
   <% end %>
 </section>
