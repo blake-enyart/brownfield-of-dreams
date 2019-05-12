@@ -3,8 +3,8 @@ require 'rails_helper'
 describe DataParse::GithubUser do
   it 'has attributes' do
     attributes = {
-     login: 'Michael Jackson',
-     html_url: '5'
+                   login: 'Michael Jackson',
+                   html_url: '5'
                   }
 
     member = DataParse::GithubUser.new(attributes)
