@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+# frozen_string_literal: true
 describe DataParse::GithubUser do
   it 'has attributes' do
     attributes = {
