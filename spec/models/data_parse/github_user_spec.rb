@@ -5,7 +5,7 @@ describe DataParse::GithubUser do
     attributes = {
      login: 'Michael Jackson',
      html_url: '5'
-     }
+                  }
 
     member = DataParse::GithubUser.new(attributes)
     expect(member.handle).to eq('Michael Jackson')
