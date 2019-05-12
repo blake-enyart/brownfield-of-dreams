@@ -29,6 +29,13 @@
       <%= link_to user.handle, user.github_url, class: 'github-follower' %>
       <% end %>
     </section>
+
+    <section class='github-followings'>
+      <h4>Followers</h4>
+      <% facade.followings.each do |user| %>
+      <%= link_to user.handle, user.github_url, class: 'github-following' %>
+      <% end %>
+    </section>
   </section>
   <% end %>
 </section>
