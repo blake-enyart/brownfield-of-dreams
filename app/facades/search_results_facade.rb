@@ -17,6 +17,12 @@ class SearchResultsFacade
     end
   end
 
+  def followings
+    raw_repo_data = get_json('following').map do |raw_user|
+      DataParse::GithubUser.new(raw_user)
+    end
+  end
+
   private
 
     def conn
