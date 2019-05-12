@@ -55,6 +55,4 @@ context 'As a registered user that connects Github' do
       end
     end
   end
-
-
 end
