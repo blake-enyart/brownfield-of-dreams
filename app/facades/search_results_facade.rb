@@ -6,19 +6,19 @@ class SearchResultsFacade
   end
 
   def repositories
-    raw_repo_data = get_json('repos').take(5).map do |raw_repo|
+    get_json('repos').take(5).map do |raw_repo|
       DataParse::Repo.new(raw_repo)
     end
   end
 
   def followers
-    raw_repo_data = get_json('followers').map do |raw_user|
+    get_json('followers').map do |raw_user|
       DataParse::GithubUser.new(raw_user)
     end
   end
 
   def followings
-    raw_repo_data = get_json('following').map do |raw_user|
+    get_json('following').map do |raw_user|
       DataParse::GithubUser.new(raw_user)
     end
   end
