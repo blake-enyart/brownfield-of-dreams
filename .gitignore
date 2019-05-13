@@ -34,3 +34,6 @@
 yarn-debug.log*
 .yarn-integrity
 brownfield-icon.jpg
+
+# Ignore VCR cassettes in development
+/spec/cassettes/
