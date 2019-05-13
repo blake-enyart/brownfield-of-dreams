@@ -54,5 +54,25 @@ context 'As a registered user that connects Github' do
         end
       end
     end
+
+    describe 'under "Following" in "Github"' do
+      it 'lists all users that user is followings with their handles linking to their Github profile', :vcr do
+        user = create(:user)
+        token = ENV['GITHUB_API_TOKEN']
+
+        allow_any_instance_of(ApplicationController).to \
+          receive(:current_user).and_return(user)
+        allow_any_instance_of(ApplicationController).to \
+          receive(:current_token).and_return(token)
+
+        visit dashboard_path
+
+        expect(page).to have_css('.github', text: 'Github')
+
+        within('.github-followings') do
+          expect(page).to have_css('a.github-following')
+        end
+      end
+    end
   end
 end
