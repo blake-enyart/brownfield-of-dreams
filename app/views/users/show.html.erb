@@ -13,27 +13,50 @@
     <h1>Bookmarked Segments</h1>
   </section>
 
+  <section class="site-friends">
+  <h3>Friends</h3>
+  <% if current_user.friends.empty?  %>
+    You have no friends<br>
+  <% else %>
+    <% current_user.friends.each do |friend| %>
+    <ul>
+      <li class='site-friend'><%= friend.first_name %>, <%= friend.last_name %></li><br>
+    </ul>
+    <% end %>
+  <% end %>
+  </section>
+
   <% if current_token %>
   <section class='github'>
     <h3>Github</h3>
     <section class='github-repos'>
       <h4>Repos</h4>
       <% facade.repositories.each do |repo| %>
-      <%= link_to repo.name, repo.html_url, class: 'github-repo' %>
+        <%= link_to repo.name, repo.html_url, class: 'github-repo' %><br>
       <% end %>
     </section>
 
     <section class='github-followers'>
       <h4>Followers</h4>
       <% facade.followers.each do |user| %>
-      <%= link_to user.handle, user.github_url, class: 'github-follower' %>
+        <section class='github-follower'>
+        <%= link_to user.handle, user.github_url, class: 'github-follower' %><br>
+        <% if user.in_database? && !current_user.already_friends?(user.id) %>
+        , <%= link_to 'Add as Friend', friendship_path(friend_id: user.id), method: :post %><br>
+        <% end %>
+        </section>
       <% end %>
     </section>
 
     <section class='github-followings'>
-      <h4>Followers</h4>
+      <h4>Following</h4>
       <% facade.followings.each do |user| %>
-      <%= link_to user.handle, user.github_url, class: 'github-following' %>
+        <section class='github-following' id=<%= user.id %>>
+          <%= link_to user.handle, user.github_url, class: 'github-following' %>
+          <% if user.in_database? && !current_user.already_friends?(user.id) %>
+          , <%= link_to 'Add as Friend', friendship_path(friend_id: user.id), method: :post %><br>
+          <% end %>
+        </section>
       <% end %>
     </section>
   </section>

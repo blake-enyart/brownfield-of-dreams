@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   # User
   resources :users, only: [:new, :create, :update, :edit]
+  post '/friendship', to: 'friendships#create', as: :friendship
   get '/dashboard', to: 'users#show'
 
   resources :tutorials, only: [:show, :index]
