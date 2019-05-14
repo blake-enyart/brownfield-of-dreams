@@ -33,19 +33,12 @@ Rails.application.routes.draw do
   get 'auth/github', as: 'github_login'
   get '/auth/:provider/callback', to: 'github_credentials#create'
 
-  get '/dashboard', to: 'users#show'
-  get '/about', to: 'about#show'
-  get '/get_started', to: 'get_started#show'
-
-  # Is this being used?
-  get '/video', to: 'video#show'
-
+  # User
   resources :users, only: [:new, :create, :update, :edit]
   post '/friendship', to: 'friendships#create', as: :friendship
+  get '/dashboard', to: 'users#show'
 
-  resources :tutorials, only: [:show, :index] do
-    resources :videos, only: [:show, :index]
-  end
+  resources :tutorials, only: [:show, :index]
 
-  resources :user_videos, only:[:create, :destroy]
+  resources :user_videos, only: [:create]
 end
