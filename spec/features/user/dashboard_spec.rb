@@ -160,7 +160,7 @@ context 'As a registered user that connects Github' do
         end
       end
 
-      it 'has "Friends" section that displays only friends' do
+      it 'has "Friends" section that displays only friends', :vcr do
         token = ENV['GITHUB_API_TOKEN']
         following_array = [{:login=>"danielgavrilov",
                             :id=>1308115,
