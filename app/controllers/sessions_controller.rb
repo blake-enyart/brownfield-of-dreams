@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def new
+    if params[:error] == 'bookmark'
+      flash[:error] = 'You must log in first to bookmark videos'
+    end
     @user ||= User.new
   end
 

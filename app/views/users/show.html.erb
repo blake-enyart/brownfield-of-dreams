@@ -9,17 +9,23 @@
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
     <li> <%= current_user.email%> </li>
   </ul>
-  <section>
+  <section class='bookmarks'>
     <h1>Bookmarked Segments</h1>
-    <% current_user.sorted_bookmarked_videos.each do |tutorial_group| %>
-      <%= tutorial_group.title %>
-      <% tutorial_group.each do |video| %>
-      <%= link_to video.title, api_v1_video_path(video.id) %><br>
-      <p>
-        <%= video.description %>
-      </p>
+    <section  class='bookmark-videos'>
+      <% current_user.sorted_bookmarked_videos.each do |tutorial_title, video_list| %>
+      <section class='bookmark-tutorial'>
+        <h4><%= tutorial_title %></h4>
+        <% video_list.each do |video| %>
+          <section class='bookmark-video'>
+            <%= link_to video.title, tutorial_path(video.tutorial_id, video_id: video.id) %><br>
+            <p>
+              <%= video.description %>
+            </p>
+          </section>
+        </section>
+        <% end %>
       <% end %>
-    <% end %>
+    </section>
   </section>
 
   <section class="site-friends">
