@@ -9,11 +9,11 @@ describe 'As a guest' do
 
     expect(current_path).to eq('/register')
 
-    fill_in 'email', with: user_info.email
-    fill_in 'first_name', with: user_info.first_name
-    fill_in 'last_name', with: user_info.last_name
-    fill_in 'password', with: user_info.password
-    fill_in 'password_confirmation', with: user_info.password
+    fill_in 'user[email]', with: user_info.email
+    fill_in 'user[first_name]', with: user_info.first_name
+    fill_in 'user[last_name]', with: user_info.last_name
+    fill_in 'user[password]', with: user_info.password
+    fill_in 'user[password_confirmation]', with: user_info.password
     click_on 'Create Account'
 
     expect(current_path).to eq('/dashboard')
