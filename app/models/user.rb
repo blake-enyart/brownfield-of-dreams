@@ -18,4 +18,22 @@ class User < ApplicationRecord
       false
     end
   end
+
+  def sorted_bookmarked_videos
+    bookmarked_videos.inject({}) do |hash, video|
+      hash[video.tutorial_title] ||= []
+      hash[video.tutorial_title] << video
+      hash
+    end
+  end
+
+  private
+
+  def bookmarked_videos
+    Video.joins(:user_videos, :tutorial)
+         .where(user_videos: {user_id: self.id})
+         .select('videos.*,
+                  tutorials.title AS tutorial_title,
+                  tutorials.id AS tutorial_id')
+  end
 end
