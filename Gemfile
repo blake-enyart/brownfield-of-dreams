@@ -34,6 +34,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
+  gem 'capybara-email'
   gem 'chromedriver-helper'
   gem 'database_cleaner'
   gem 'foundation-rails'
