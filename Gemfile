@@ -38,6 +38,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'foundation-rails'
   gem 'launchy'
+  gem 'mailcatcher'
   gem 'pry'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
