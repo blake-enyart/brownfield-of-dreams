@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'tags/:tag', to: 'welcome#index', as: :tag
   get '/register', to: 'users#new'
+  get '/activation', to: 'activation#show', as: :activation_success
 
   namespace :admin do
     get "/dashboard", to: "dashboard#show"
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
 
   # User
   resources :users, only: [:new, :create, :update, :edit]
+  get '/users/:id', to: 'users#update', as: :activate_user
   post '/friendship', to: 'friendships#create', as: :friendship
   get '/dashboard', to: 'users#show'
 
