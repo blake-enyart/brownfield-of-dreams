@@ -27,6 +27,7 @@ gem 'jquery'
 gem 'omniauth-github', github: 'intridea/omniauth-github'
 gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census"
 gem 'rubocop-performance'
+gem 'sendgrid-ruby'
 gem 'will_paginate'
 gem 'yt', '~> 0.29.1'
 
@@ -34,10 +35,12 @@ group :development, :test do
   gem 'awesome_print'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
+  gem 'capybara-email'
   gem 'chromedriver-helper'
   gem 'database_cleaner'
   gem 'foundation-rails'
   gem 'launchy'
+  gem 'mailcatcher'
   gem 'pry'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
