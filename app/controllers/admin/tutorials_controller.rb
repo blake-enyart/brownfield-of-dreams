@@ -4,12 +4,13 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
-    # require "pry"; binding.pry
-    @tutorial = Creators::TutorialCreator.new(params)
-    if @tutorial.save
+    @tutorial = Creators::TutorialCreator.new(params).create
+    if @tutorial
+      @tutorial = Tutorial.last
+      flash[:success] = "#{@tutorial.title} created successfully!"
       redirect_to tutorial_path(@tutorial)
     else
-      flash[:error] = @tutorial.errors.full_messages.to_sentence
+      flash[:error] = 'Something went wrong! Please input the tutorial again.'
       render :new
     end
   end
@@ -25,6 +26,13 @@ class Admin::TutorialsController < Admin::BaseController
     end
     redirect_to edit_admin_tutorial_path(tutorial)
   end
+
+  def destroy
+    tutorial = Tutorial.find(params[:id])
+    tutorial.destroy
+    redirect_to admin_dashboard_path
+  end
+
 
   private
 
