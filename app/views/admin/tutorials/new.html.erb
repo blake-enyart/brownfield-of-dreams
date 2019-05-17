@@ -9,8 +9,8 @@
 
   <h3>Videos</h3>
 
-  <%= fields_for :videos do |video_fields| %>
-    <%= video_fields.label :video_id, 'Youtube URL' %>
+  <%= fields_for :video do |video_fields| %>
+    <%= video_fields.label :video_id, 'Youtube ID' %>
     <%= video_fields.text_field :video_id, class: "block col-4 field" %>
   <% end %>
 
