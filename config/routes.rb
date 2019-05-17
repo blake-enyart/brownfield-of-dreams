@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
   end
 
+  # Registration
   root 'welcome#index'
   get 'tags/:tag', to: 'welcome#index', as: :tag
 
