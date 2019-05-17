@@ -4,6 +4,15 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
+    @tutorial = Creators::TutorialCreator.new(params).create
+    if @tutorial
+      @tutorial = Tutorial.last
+      flash[:success] = "#{@tutorial.title} created successfully!"
+      redirect_to tutorial_path(@tutorial)
+    else
+      flash[:error] = 'Something went wrong! Please input the tutorial again.'
+      render :new
+    end
   end
 
   def new
@@ -18,9 +27,17 @@ class Admin::TutorialsController < Admin::BaseController
     redirect_to edit_admin_tutorial_path(tutorial)
   end
 
+  def destroy
+    tutorial = Tutorial.find(params[:id])
+    tutorial.destroy
+    redirect_to admin_dashboard_path
+  end
+
+
   private
 
     def tutorial_params
-      params.require(:tutorial).permit(:tag_list)
+      params.require(:tutorial).permit(:tag_list, :title, :description,
+                                       :thumbnail, :playlist_id)
     end
 end
