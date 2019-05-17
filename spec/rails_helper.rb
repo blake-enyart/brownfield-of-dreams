@@ -32,7 +32,13 @@ Capybara.configure do |config|
   config.default_max_wait_time = 5
 end
 
-SimpleCov.start "rails"
+SimpleCov.start "rails" do
+  add_filter '/controllers/'
+  add_filter '/helpers/'
+  add_filter '/jobs/'
+  add_filter '/channels/'
+  add_filter '/creators/'
+end
 
 Shoulda::Matchers.configure do |config|
     config.integrate do |with|
