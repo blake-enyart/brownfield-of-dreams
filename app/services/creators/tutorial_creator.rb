@@ -4,20 +4,14 @@ class Creators::TutorialCreator
   end
 
   def create
-    ApplicationRecord::Base.transaction do
+    ActiveRecord::Base.transaction do
       tutorial = Tutorial.create!(tutorial_params)
-      tutorial.videos.create!(new_video_params)
-      begin
-        tutorial  = Tutorial.find(params[:tutorial_id])
-        thumbnail = YouTube::Video.by_id(new_video_params[:video_id]).thumbnail
-        video     = tutorial.videos.new(new_video_params.merge(thumbnail: thumbnail))
-
-        video.save
-
-        flash[:success] = "Successfully created video."
-      rescue # Sorry about this. We should get more specific instead of swallowing all errors.
-        flash[:error] = "Unable to create video."
-      end
+      video_info = YouTube::Video.by_id(new_video_params[:video_id])
+      title = video_info.title
+      thumbnail = video_info.thumbnail
+      description = video_info.description
+      video     = tutorial.videos.new(new_video_params.merge(thumbnail: thumbnail, title: title, description: description))
+      video.save!
     end
   end
 
