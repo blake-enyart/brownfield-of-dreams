@@ -27,6 +27,7 @@ gem 'jquery'
 gem 'omniauth-github', github: 'intridea/omniauth-github'
 gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census"
 gem 'rubocop-performance'
+gem 'sendgrid-ruby'
 gem 'will_paginate'
 gem 'yt', '~> 0.29.1'
 
