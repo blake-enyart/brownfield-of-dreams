@@ -4,6 +4,14 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
+    # require "pry"; binding.pry
+    @tutorial = Creators::TutorialCreator.new(params)
+    if @tutorial.save
+      redirect_to tutorial_path(@tutorial)
+    else
+      flash[:error] = @tutorial.errors.full_messages.to_sentence
+      render :new
+    end
   end
 
   def new
@@ -21,6 +29,7 @@ class Admin::TutorialsController < Admin::BaseController
   private
 
     def tutorial_params
-      params.require(:tutorial).permit(:tag_list)
+      params.require(:tutorial).permit(:tag_list, :title, :description,
+                                       :thumbnail, :playlist_id)
     end
 end

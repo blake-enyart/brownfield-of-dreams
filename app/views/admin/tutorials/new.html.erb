@@ -9,9 +9,9 @@
 
   <h3>Videos</h3>
 
-  <%= f.fields_for :videos do |builder| %>
-    <%= f.label :youtube_url %>
-    <%= f.text_field :video_id, class: "block col-4 field" %>
+  <%= fields_for :videos do |video_fields| %>
+    <%= video_fields.label :video_id, 'Youtube URL' %>
+    <%= video_fields.text_field :video_id, class: "block col-4 field" %>
   <% end %>
 
   <%= f.submit "Save", class: "mt2 btn btn-primary mb1 bg-teal"  %>
