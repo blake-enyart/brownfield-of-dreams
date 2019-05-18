@@ -21,10 +21,9 @@ class User < ApplicationRecord
   end
 
   def sorted_bookmarked_videos
-    bookmarked_videos.inject({}) do |hash, video|
+    bookmarked_videos.each_with_object({}) do |video, hash|
       hash[video.tutorial_title] ||= []
       hash[video.tutorial_title] << video
-      hash
     end
   end
 
@@ -32,7 +31,7 @@ class User < ApplicationRecord
 
   def bookmarked_videos
     Video.joins(:user_videos, :tutorial)
-         .where(user_videos: {user_id: self.id})
+         .where(user_videos: { user_id: id })
          .select('videos.*,
                   tutorials.title AS tutorial_title,
                   tutorials.id AS tutorial_id')

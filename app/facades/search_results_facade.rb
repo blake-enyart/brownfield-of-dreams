@@ -25,16 +25,16 @@ class SearchResultsFacade
 
   private
 
-    def conn
-      url_path = 'https://api.github.com/user/'
-      Faraday.new(url: url_path) do |faraday|
-        faraday.params['access_token'] = @token
-        faraday.adapter Faraday.default_adapter
-      end
+  def conn
+    url_path = 'https://api.github.com/user/'
+    Faraday.new(url: url_path) do |faraday|
+      faraday.params['access_token'] = @token
+      faraday.adapter Faraday.default_adapter
     end
+  end
 
-    def get_json(url = nil)
-      response = conn.get(url)
-      JSON.parse(response.body, symbolize_names: true)
-    end
+  def get_json(url = nil)
+    response = conn.get(url)
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
