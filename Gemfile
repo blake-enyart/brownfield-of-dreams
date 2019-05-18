@@ -3,16 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # Standard Rails Gems
 ruby '2.4.1'
-gem 'rails', '~> 5.2.0'
-gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 3.11'
-gem 'sass-rails', '~> 5.0'
-# gem 'uglifier', '>= 1.3.0'
+gem 'bcrypt', '~> 3.1.7'
+gem 'bootsnap', '>= 1.1.0', require: false
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
-gem 'bootsnap', '>= 1.1.0', require: false
-gem 'bcrypt', '~> 3.1.7'
-
+gem 'pg', '>= 0.18', '< 2.0'
+gem 'puma', '~> 3.11'
+gem 'rails', '~> 5.2.0'
+gem 'sass-rails', '~> 5.0'
 gem 'webpacker', '~> 3.5'
 
 # Custom Gems
@@ -24,8 +22,8 @@ gem 'faraday'
 gem 'figaro'
 gem 'google-api-client'
 gem 'jquery'
+gem 'omniauth-census', git: 'https://github.com/turingschool-projects/omniauth-census'
 gem 'omniauth-github', github: 'intridea/omniauth-github'
-gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census"
 gem 'rubocop-performance'
 gem 'sendgrid-ruby'
 gem 'will_paginate'

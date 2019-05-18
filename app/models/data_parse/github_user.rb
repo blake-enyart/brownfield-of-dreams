@@ -10,6 +10,6 @@ class DataParse::GithubUser
   end
 
   def in_database?
-    User.find_by(github_uid: self.id)
+    User.find_by(github_uid: id)
   end
 end

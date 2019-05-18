@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-context 'As a registered user that connects Github' do
-  describe 'when they visit their dashboard' do
+context 'As a registered user' do
+  describe 'when they connect their github acct' do
     describe 'and in "Github" section' do
       it 'shows 5 of their repos', :vcr do
         user = create(:user)
