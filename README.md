@@ -1,6 +1,6 @@
 # Brownfield Of Dreams
 <p align="center">
- <img src="public/README/landing_page.png" width="600" height="auto"/>
+ <img src="public/README/landing_page.png" width="800" height="auto"/>
 </p>
 
 This is the finished product which was built on top of a brownfield project used at Turing for Backend Mod 3.
