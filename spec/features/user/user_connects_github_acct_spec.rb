@@ -124,7 +124,7 @@ context 'As a registered user' do
         allow_any_instance_of(ApplicationController).to \
           receive(:current_token).and_return(token)
 
-        allow_any_instance_of(SearchResultsFacade).to \
+        allow_any_instance_of(DashboardFacade).to \
           receive(:followings).and_return(github_followers)
 
         visit dashboard_path
@@ -230,7 +230,7 @@ context 'As a registered user' do
         allow_any_instance_of(ApplicationController).to \
           receive(:current_token).and_return(token)
 
-        allow_any_instance_of(SearchResultsFacade).to \
+        allow_any_instance_of(DashboardFacade).to \
           receive(:followings).and_return(github_followers)
 
         visit dashboard_path

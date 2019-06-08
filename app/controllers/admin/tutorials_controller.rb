@@ -4,13 +4,15 @@ class Admin::TutorialsController < Admin::BaseController
   end
 
   def create
-    @tutorial = Creators::TutorialCreator.new(params).create
+    @creator = Creators::TutorialCreator.new(params)
+    @tutorial = @creator.create
+    # require "pry"; binding.pry
     if @tutorial
       @tutorial = Tutorial.last
-      flash[:success] = "#{@tutorial.title} created successfully!"
+      flash[:success] = @creator.message
       redirect_to tutorial_path(@tutorial)
     else
-      flash[:error] = 'Something went wrong! Please input the tutorial again.'
+      flash[:error] = @creator.message
       render :new
     end
   end
