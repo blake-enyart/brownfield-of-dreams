@@ -3,7 +3,7 @@
  <img src="public/README/landing_page.png" width="800" height="auto"/>
 </p>
 
-This is the finished product which was built on top of a brownfield project used at Turing for Backend Mod 3.
+This is the finished product which was built on top of a brownfield project used at Turing for Backend Mod 3. The app can be seen in production on Heroku [here](http://protected-oasis-45870.herokuapp.com/).
 
 The original brownfield code base can be referred to in the Github repo [here](https://github.com/turingschool-examples/brownfield-of-dreams).
 
