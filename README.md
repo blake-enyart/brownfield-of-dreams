@@ -1,6 +1,6 @@
 # Brownfield Of Dreams
 
-This is the final project which was built starting from a brownfield project used at Turing for Backend Mod 3.
+This is the finished product which was built on top of a brownfield project used at Turing for Backend Mod 3.
 
 The original brownfield code base can be referred to in the Github repo [here](https://github.com/turingschool-examples/brownfield-of-dreams).
 
@@ -11,13 +11,11 @@ Project Spec and Evaluation Rubric: https://github.com/turingschool-examples/bro
 Students build on the existing code base using the cards within the following Github Project: https://github.com/turingschool-examples/brownfield-of-dreams/projects/1
 
 ### About the Project
-
 This is a Ruby on Rails application used to organize YouTube content used for online learning. Each tutorial is a playlist of video segments. Within the application an admin is able to create tags for each tutorial in the database. A visitor or registered user can then filter tutorials based on these tags.
 
 A visitor is able to see all of the content on the application but in order to bookmark a segment they will need to register. Once registered a user can bookmark any of the segments in a tutorial page.
 
 ## Local Setup
-
 
 Clone down the repo
 ```
@@ -76,6 +74,6 @@ bundle exec rspec
 * [selenium-webdriver](https://www.seleniumhq.org/docs/03_webdriver.jsp)
 * [chromedriver-helper](http://chromedriver.chromium.org/)
 
-### Versions
+### Dependencies
 * Ruby 2.4.1
 * Rails 5.2.0
