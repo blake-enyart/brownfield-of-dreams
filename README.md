@@ -9,6 +9,11 @@ The original brownfield code base can be referred to in the Github repo [here](h
 
 Project Spec and Evaluation Rubric: https://github.com/turingschool-examples/brownfield-of-dreams
 
+### Application Highlights
+* RESTful API design
+* TDD/Declarative Programming
+* OAuth authentication
+
 ### Project Requirements
 
 Students build on the existing code base using the cards within the following Github Project: https://github.com/turingschool-examples/brownfield-of-dreams/projects/1
